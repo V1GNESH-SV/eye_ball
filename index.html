@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coding Assignment 7</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body onmousemove="move(event)">
+    <div class="eyes">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>  
+<script>
+const eyeballs = document.querySelectorAll(".eyeball");
+function move(item){
+    for(var i=0;i < eyeballs.length;i++)
+    {
+        var rectX=eyeballs[i].offsetLeft
+        var rectY=eyeballs[i].offsetTop
+        var x = (item.pageX - rectX) / 20 + "px";
+        var y = (item.pageY - rectY) / 20 + "px";
+        eyeballs[i].style.transform = "translate3d(" + x + "," + y + ", 0px)";
+    }
+    }
+</script>    
+</body>
+</html>  
